@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import ExerciseCard from './ExerciseCard';
+import Loader from './Loader';
 
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
 import RightArrowIcon from '../assets/icons/right-arrow.png';
@@ -96,7 +97,7 @@ const SimilarExercises = ({ targetExercise, equipmentExercise }) => {
           <Typography variant='h4' ml="1rem" mb='1rem'  color='#333' sx={{ textAlign: 'left' }}>
             Exercises that use the same Equipment
           </Typography>
-          {filteredEquipment.length > 0 && (
+          {filteredEquipment.length > 0 ? (
             <ScrollMenu 
               LeftArrow={<LeftArrow />} 
               RightArrow={<RightArrow />}
@@ -111,7 +112,7 @@ const SimilarExercises = ({ targetExercise, equipmentExercise }) => {
                 </Box>
               ))}
             </ScrollMenu>
-          )}
+          ) : <Loader />}
         </Box>
       
       
@@ -121,7 +122,7 @@ const SimilarExercises = ({ targetExercise, equipmentExercise }) => {
           <Typography variant='h4' ml="1rem" mb='1rem' color='#333' sx={{ textAlign: 'left' }}>
             Exercises that target the same Muscle group
           </Typography>
-          {filteredTarget.length > 0 && (
+          {filteredTarget.length > 0 ? (
             <ScrollMenu 
               LeftArrow={<LeftArrow />} 
               RightArrow={<RightArrow />}
@@ -132,7 +133,7 @@ const SimilarExercises = ({ targetExercise, equipmentExercise }) => {
                 </Box>
               ))}
             </ScrollMenu>
-          )}
+          ) : <Loader /> }
         </Box>
     </Box>
   );

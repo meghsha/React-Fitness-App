@@ -28,22 +28,37 @@ const RightArrow = () => {
 };
 
 
-const HorizontalScrollBar = ({data, bodyPart, setBodyPart}) => {
+const HorizontalScrollBar = ({ data, bodyPart, setBodyPart }) => {
   return (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-        {data.map((item) => {
-            return <Box 
+    <Box
+      sx={{
+        '& .react-horizontal-scrolling-menu--scroll-container': {
+          minHeight: '330px',
+          paddingBottom: '1rem',
+        },
+        '& .react-horizontal-scrolling-menu--wrapper': {
+          paddingBottom: '0.1rem',
+        },
+      }}
+    >
+      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+        {data.map((item) => (
+          <Box
             key={item.id || item}
             itemId={item.id || item}
             title={item.id || item}
-            m="0 40px"
-            >
-            <BodyPart item = {item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-
-            </Box>
-        })}
-    </ScrollMenu>
-  )
-}
+            m="0 2rem"
+          >
+            <BodyPart
+              item={item}
+              bodyPart={bodyPart}
+              setBodyPart={setBodyPart}
+            />
+          </Box>
+        ))}
+      </ScrollMenu>
+    </Box>
+  );
+};
 
 export default HorizontalScrollBar
