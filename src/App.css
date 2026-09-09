@@ -100,8 +100,57 @@ body {
   flex-direction: column;
   gap: 24px;
   width: 350px;
-  height: 381px;
+  /* height: 381px; */
   text-decoration: none;
+}
+
+.react-horizontal-scrolling-menu--wrapper {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+/* The actual scrolling row */
+.react-horizontal-scrolling-menu--scroll-container {
+  gap: 10px;
+  padding-bottom: 10px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* LEFT ARROW */
+.similar-left-arrow {
+  position: absolute;
+  bottom: 5px;
+  right: 65px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* RIGHT ARROW */
+.similar-right-arrow {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.similar-left-arrow:hover,
+.similar-right-arrow:hover {
+  background: #f1f1f1;
 }
 
 @media screen and (max-width: 1200px) {
