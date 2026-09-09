@@ -90,48 +90,50 @@ const SimilarExercises = ({ targetExercise, equipmentExercise }) => {
   });
 
   return (
-    <Box sx={{ ml: '1rem' }}>
+    <Box sx={{ ml: '1rem', mt: "4rem" }}>
       {/* Equipment Row */}
-      {filteredEquipment.length > 0 && (
         <Box sx={{ mb: '40px' }}>
-          <Typography variant='h4' ml="1rem" mb='24px'  color='#333' sx={{ textAlign: 'left' }}>
+          <Typography variant='h4' ml="1rem" mb='1rem'  color='#333' sx={{ textAlign: 'left' }}>
             Exercises that use the same Equipment
           </Typography>
-          <ScrollMenu 
-            LeftArrow={<LeftArrow />} 
-            RightArrow={<RightArrow />}
-          >
-            {filteredEquipment.map((exercise) => (
-              <Box key={exercise.id} itemId={exercise.id} title={exercise.id} sx={{ minWidth: {
-                  xs: '280px',
-                  sm: '320px',
-                  md: '350px',
-                }, m: '0 16px' }}>
-                <ExerciseCard movement={exercise} />
-              </Box>
-            ))}
-          </ScrollMenu>
+          {filteredEquipment.length > 0 && (
+            <ScrollMenu 
+              LeftArrow={<LeftArrow />} 
+              RightArrow={<RightArrow />}
+            >
+              {filteredEquipment.map((exercise) => (
+                <Box key={exercise.id} itemId={exercise.id} title={exercise.id} sx={{ minWidth: {
+                    xs: '280px',
+                    sm: '320px',
+                    md: '350px',
+                  }, m: '0 16px' }}>
+                  <ExerciseCard movement={exercise} />
+                </Box>
+              ))}
+            </ScrollMenu>
+          )}
         </Box>
-      )}
+      
       
       {/* Target Row */}
-      {filteredTarget.length > 0 && (
+      
         <Box sx={{ mb: '40px' }}>
-          <Typography variant='h4' ml="1rem" mb='24px' color='#333' sx={{ textAlign: 'left' }}>
+          <Typography variant='h4' ml="1rem" mb='1rem' color='#333' sx={{ textAlign: 'left' }}>
             Exercises that target the same Muscle group
           </Typography>
-          <ScrollMenu 
-            LeftArrow={<LeftArrow />} 
-            RightArrow={<RightArrow />}
-          >
-            {filteredTarget.map((exercise) => (
-              <Box key={exercise.id} itemId={exercise.id} title={exercise.id} sx={{ minWidth: '180px', m: '0 16px' }}>
-                <ExerciseCard movement={exercise} />
-              </Box>
-            ))}
-          </ScrollMenu>
+          {filteredTarget.length > 0 && (
+            <ScrollMenu 
+              LeftArrow={<LeftArrow />} 
+              RightArrow={<RightArrow />}
+            >
+              {filteredTarget.map((exercise) => (
+                <Box key={exercise.id} itemId={exercise.id} title={exercise.id} sx={{ minWidth: '180px', m: '0 16px' }}>
+                  <ExerciseCard movement={exercise} />
+                </Box>
+              ))}
+            </ScrollMenu>
+          )}
         </Box>
-      )}
     </Box>
   );
 };

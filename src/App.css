@@ -106,15 +106,14 @@ body {
 
 .react-horizontal-scrolling-menu--wrapper {
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 2rem;
 }
 
-/* The actual scrolling row */
 .react-horizontal-scrolling-menu--scroll-container {
-  gap: 10px;
-  padding-bottom: 10px;
-
-  /* Hide scrollbar */
+  min-height: 470px;
+  align-items: flex-start;
+  padding-top: 10px;
+  padding-bottom: 5rem;
   scrollbar-width: none;
 }
 
